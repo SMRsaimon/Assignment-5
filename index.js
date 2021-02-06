@@ -46,7 +46,7 @@ function foodDetails(detailById) {
     fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${detailById}`)
         .then((response) => response.json())
         .then((data) => {
-            console.log(data);
+            const details = data.meals;
 
             let htmlTemplateForDetails = '';
             details.forEach((x) => {
