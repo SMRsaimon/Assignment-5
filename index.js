@@ -4,13 +4,13 @@ function $(selecetedId) {
 
 const mealList = $('foodIteam');
 
-// const notFound = document.getElementsByClassName('notFound');
 $('searchButton').addEventListener('click', foodIteam);
 
+// searchFood Iteam
 function foodIteam() {
-    const searchIteam = $('searchIteam').value.trim();
+    const searchInput = $('searchIteam').value.trim();
 
-    fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchIteam}`)
+    fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchInput}`)
         .then((response) => response.json())
         .then((data) => {
             const food = data.meals;
@@ -25,9 +25,7 @@ function foodIteam() {
                <img  src="${x.strMealThumb}" alt="food image">
                <h3>${x.strMeal}</h3>
                   
-                </div>
-              
-               
+                </div>               
                `;
                 });
                 mealList.classList.remove('notFound');
