@@ -61,7 +61,7 @@ function foodDetails(detailById) {
                   <p><span ${x.strMeasure2}</span> <span>${x.strIngredient2}</span> </p>
                     <p><span>${x.strMeasure3}</span> <span>${x.strIngredient3}</span> </p>
                       <p><span>${x.strMeasure4}</span> <span>${x.strIngredient4}</span> </p>
-                        <p><span>${x.sstrMeasure5}</span> <span>${x.strIngredient5}</span> </p>
+                        <p><span>${x.strMeasure5}</span> <span>${x.strIngredient5}</span> </p>
                           <p><span>${x.strMeasure6}</span> <span>${x.strIngredient6}</span> </p>
                             <p><span>${x.strMeasure7}</span> <span>${x.strIngredient7}</span> </p>
                               <p><span>${x.strMeasure8}</span> <span>${x.strIngredient8}</span> </p>
