@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    background: rgba(115, 163, 252, 0.355);
 }
 
 .contant-wrap {
@@ -40,7 +41,7 @@
 }
 
 .notFound {
-    color: cadetblue;
+    color: rgb(255, 255, 255);
     font-size: 24px;
     text-align: center;
 }
@@ -79,6 +80,25 @@
 
 .foodDetailsContainer p {
     font-size: 16px;
-    color: gray;
+    color: rgb(8, 8, 8);
     font-weight: 600;
 }
+
+
+/* footer */
+
+
+/* 
+footer {
+    padding: 10px 10px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+}
+
+footer p {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: gainsboro;
+    margin-bottom: 10px;
+} */
