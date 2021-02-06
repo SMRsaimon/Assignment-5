@@ -14,20 +14,26 @@
 </head>
 
 <body>
-    <div class="conatiner my-5">
+    <div class="container my-5">
         <div class="row contant-wrap">
             <div class="col-md-6">
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1" />
+                    <input id="searchIteam" type="text" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1" />
 
-                    <button class="btn btn-outline-secondary" type="button" id="button-addon1">Button</button>
+                    <button id="searchButton" class="btn btn-outline-secondary" type="button">Button</button>
                 </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="text-center my-5">Your search Result..........</h2>
+                <div id="foodIteam" class="notFound"></div>
             </div>
         </div>
     </div>
 
     <!-- js file  -->
-    <script src="index.js"></script>
+    <script src="index.js "></script>
 </body>
 
 </html>
