@@ -1,6 +1,7 @@
 function $(selecetedId) {
     return document.getElementById(selecetedId);
 }
+
 const mealList = $('foodIteam');
 
 // const notFound = document.getElementsByClassName('notFound');
@@ -19,7 +20,7 @@ function foodIteam() {
                 food.forEach((x) => {
                     htmlTemplate += `
 
-                <div class="food-wrapper">
+                <div onclick="foodDetails('${x.idMeal}')"  class="food-wrapper">
                  
                <img  src="${x.strMealThumb}" alt="food image">
                <h3>${x.strMeal}</h3>
@@ -35,5 +36,42 @@ function foodIteam() {
                 mealList.classList.add('notFound');
             }
             mealList.innerHTML = htmlTemplate;
+        });
+}
+
+// click event and show food deatils
+
+const detailsShow = $('showDetails');
+
+function foodDetails(detailById) {
+    fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${detailById}`)
+        .then((response) => response.json())
+        .then((data) => {
+            const details = data.meals;
+
+            let htmlTemplateForDetails = '';
+            details.forEach((x) => {
+                htmlTemplateForDetails = `
+              
+                <img  src="${x.strMealThumb}" alt="food image">
+                 <h3>${x.strMeal}</h3>
+                  <h3>  Ingredien :</h3>
+                
+                <p><span>${x.strMeasure1}</span> <span>${x.strIngredient1}</span> </p>
+                  <p><span ${x.strMeasure2}</span> <span>${x.strIngredient2}</span> </p>
+                    <p><span>${x.strMeasure3}</span> <span>${x.strIngredient3}</span> </p>
+                      <p><span>${x.strMeasure4}</span> <span>${x.strIngredient4}</span> </p>
+                        <p><span>${x.sstrMeasure5}</span> <span>${x.strIngredient5}</span> </p>
+                          <p><span>${x.strMeasure6}</span> <span>${x.strIngredient6}</span> </p>
+                            <p><span>${x.strMeasure7}</span> <span>${x.strIngredient7}</span> </p>
+                              <p><span>${x.strMeasure8}</span> <span>${x.strIngredient8}</span> </p>
+                                <p><span>${x.strMeasure9}</span> <span>${x.strIngredient9}</span> </p>
+                                  <p><span>1${x.strMeasure10}</span> <span>${x.strIngredient10}</span> </p>
+                                    <p><span>${x.strMeasure11}</span> <span>${x.strIngredient11}</span> </p>
+
+                `;
+            });
+
+            detailsShow.innerHTML = htmlTemplateForDetails;
         });
 }
