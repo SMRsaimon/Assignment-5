@@ -54,7 +54,7 @@ function foodDetails(detailById) {
                 htmlTemplateForDetails = `
               <div class="foodDetailsContainer">
                <img  src="${x.strMealThumb}" alt="food image">
-                 <h3>${x.strMeal}</h3>
+                 <h2>${x.strMeal}</h2>
                   <h3>  Ingredien :</h3>
                 
                 <p><span>${x.strMeasure1}</span> <span>${x.strIngredient1}</span> </p>
