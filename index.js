@@ -1,8 +1,10 @@
+// make function By using $ sign
 function $(selecetedId) {
     return document.getElementById(selecetedId);
 }
 
 const mealList = $('foodIteam');
+const detailsShow = $('showDetails');
 
 $('searchButton').addEventListener('click', foodIteam);
 
@@ -32,6 +34,7 @@ function foodIteam() {
             } else {
                 htmlTemplate = "Sorry, we didn't find any meal!";
                 mealList.classList.add('notFound');
+                detailsShow.innerHTML = '';
             }
             mealList.innerHTML = htmlTemplate;
         });
@@ -39,13 +42,11 @@ function foodIteam() {
 
 // click event and show food deatils
 
-const detailsShow = $('showDetails');
-
 function foodDetails(detailById) {
     fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${detailById}`)
         .then((response) => response.json())
         .then((data) => {
-            const details = data.meals;
+            console.log(data);
 
             let htmlTemplateForDetails = '';
             details.forEach((x) => {
