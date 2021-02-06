@@ -52,8 +52,8 @@ function foodDetails(detailById) {
             let htmlTemplateForDetails = '';
             details.forEach((x) => {
                 htmlTemplateForDetails = `
-              
-                <img  src="${x.strMealThumb}" alt="food image">
+              <div class="foodDetailsContainer">
+               <img  src="${x.strMealThumb}" alt="food image">
                  <h3>${x.strMeal}</h3>
                   <h3>  Ingredien :</h3>
                 
@@ -66,8 +66,11 @@ function foodDetails(detailById) {
                             <p><span>${x.strMeasure7}</span> <span>${x.strIngredient7}</span> </p>
                               <p><span>${x.strMeasure8}</span> <span>${x.strIngredient8}</span> </p>
                                 <p><span>${x.strMeasure9}</span> <span>${x.strIngredient9}</span> </p>
-                                  <p><span>1${x.strMeasure10}</span> <span>${x.strIngredient10}</span> </p>
+                                  <p><span>${x.strMeasure10}</span> <span>${x.strIngredient10}</span> </p>
                                     <p><span>${x.strMeasure11}</span> <span>${x.strIngredient11}</span> </p>
+                
+              </div>
+               
 
                 `;
             });
