@@ -1,25 +1,23 @@
 // make function By using $ sign
-function $(selecetedId) {
+const $ = (selecetedId) => {
     return document.getElementById(selecetedId);
-}
+};
 
 const mealList = $('foodIteam');
 const detailsShow = $('showDetails');
 
-$('searchButton').addEventListener('click', foodIteam);
-
 // searchFood Iteam
-function foodIteam() {
+const foodIteam = () => {
     const searchInput = $('searchIteam').value.trim();
 
     fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchInput}`)
         .then((response) => response.json())
         .then((data) => {
-            const food = data.meals;
+            const foods = data.meals;
             let htmlTemplate = '';
 
-            if (food) {
-                food.forEach((x) => {
+            if (foods) {
+                foods.forEach((x) => {
                     htmlTemplate += `
 
                 <div onclick="foodDetails('${x.idMeal}')"  class="food-wrapper">
@@ -38,11 +36,12 @@ function foodIteam() {
             }
             mealList.innerHTML = htmlTemplate;
         });
-}
+};
+// $('searchButton').addEventListener('click', foodIteam);
 
 // click event and show food deatils
 
-function foodDetails(detailById) {
+const foodDetails = (detailById) => {
     fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${detailById}`)
         .then((response) => response.json())
         .then((data) => {
@@ -76,4 +75,4 @@ function foodDetails(detailById) {
 
             detailsShow.innerHTML = htmlTemplateForDetails;
         });
-}
+};
